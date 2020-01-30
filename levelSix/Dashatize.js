@@ -24,3 +24,15 @@ while (a < 10) {
   break;
 }
 console.log(a);
+
+
+
+// ----
+function dashatize(num) {
+  const conv = (acc, val) => (val % 2 != 1) ? acc + val : acc + `-${val}-`;
+  const trim = (str) => str == '--' ? '-' : '';
+  let [...numArr] = Math.abs(num).toString();
+
+  let str = numArr.reduce(conv, '');
+  return str.replace(/^-|--|-$/gi, trim);
+};
